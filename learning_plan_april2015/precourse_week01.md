@@ -4,7 +4,7 @@ PreCourse Week 1
 Most Important Things I Learned:
 -------------------------------
 
-* Importance of trying to solve something thoroughly yourself first - can get further than you think
+* Importance of trying to solve something thoroughly (beyond just basic googling) yourself first - can get further than you think
 * PATH, pipes/ redirecting and other env variables are key for how whole computer works
 
 Things I Struggled With The Most:
@@ -24,7 +24,6 @@ Changes I Plan to Make Next Week:
 Other Experiences This Week:
 -------------------------------
 
-* ...
-* ...
+* Its great when you actually figure something out on your own
 
 
