@@ -1,0 +1,57 @@
+Why is Learning to Code So Hard?
+
+December 2012
+
+Why can some people learn how to code with relative ease, yet others fail? Why do some people graduate with a computer science degree yet struggle when they get on the job? Are software developers somehow genetically superior? Or can it be learned? If we tried to revolutionise how people learn to code, could we do it?
+
+These are a few of the questions I used as a starting point to explore how people learn to code.
+
+The Problem
+
+Demand for software developers is high. Starting salaries are high. The future for a skilled developer has never been brighter.
+
+Today we have more learning resources available than ever before. Almost all Universities teach computer science. With the expansion of “everywhere education” we can access world-class content for free on sites like iTunesU, Coursera and Udacity. We have phenomenal resources for the “teach yourself” programmer such as Michael Hartl’s Ruby on Rails tutorial and Railscasts. We’ve even seen the utilisation of cutting edge web technologies to teach in-the-browser programming from sites like CodeAcademy and CodeSchool.
+
+But despite the selection of resources and the incentives to learn, there are still many people who try to teach themselves how to program and fail.
+
+The Failing Points
+
+I first interviewed a large number of people who have attempted to learn how to program, but failed somewhere along the way. I asked them questions to determine where, when and what material they were on when they decided to abandon the process. A lot of great information was gained through this process, but four points contributed to nearly every person’s decision to give up:
+
+Help sections aren’t – A novice developer using the help section is similar to someone learning German using a native German dictionary to figure out the meaning of a word. It can work, but it’s far from optimal. The terminology is simply too confusing.
+Sudden leap in difficulty – Nearly everyone noted that at some point in their learning they stumbled upon a sudden leap in difficulty that crippled their ability to grasp the follow-on concepts. The interesting thing was that this leap in difficulty was different for just about every student.
+Inconsistent learning – Trying to learn how to program in 20 minutes every other evening doesn’t cut it. Similar to elementary school where each week’s algebra work required that you understood the previous week’s principles, software development highly builds on previous concepts. If you spend too much time between reinforcement, learning gets significantly more difficult.
+Projects that aren’t engaging – Many people couldn’t keep their motivation because who really wants to code another to-do list?
+The Experts
+
+After seeing where people were failing, I contacted the best developers I knew in London and asked them who were the best five developers that they knew. From this I got a sizeable list of experts to interview.
+
+I asked each of these experts a variety of questions ranging from where they saw beginners wasting the most time to what they personally did, and continue to do, to maintain their coding prowess.
+
+Here are a couple of the more material points that came out:
+
+Too many developers want to stay in their comfort zone. They try to bend whatever language or framework they know best to the problem at hand. This makes perfect sense if we think about it – people want to feel good about themselves and being good at something provides that feeling.1
+
+While none of the experts explicitly stated it, I noticed that every developer I talked to stayed with the questions I asked longer than the average person would have. Instead of just blurting out the first thing that came to their mind, many of them would silently sit and look up into the corner of the room for 1-2 minutes thoroughly pensive about the question at hand. I hypothesise that this reticence to jump at the first thing that comes to mind is directly correlated to their success in programming. Many novices take the trial-and-error approach to every problem and while that can be useful, it’s not always the best tool for the job. In addition, this thorough and patient exploration of a problem likely also correlates to their stick-with-it-ness that is so prevalent and near-universally agreed to be a primary indicator of great hackers.
+
+Lastly, I explored how developers spend their time on the job. Most tasks fell into one of four time slots:
+
+Fixing bugs and making minor changes to an existing code base
+Adding new features to an existing code base
+Writing new software from scratch
+Refactoring (making a material architectural change to a code base without changing the functionality – very difficult)
+Editing an existing code base is what most entry-level programmers will do in a new position.
+
+Where to go from here?
+
+While the research is far from completed, I couldn’t be more excited about how to use this information to try and improve upon existing ways of learning how to code. Some of the revelations are a complete mystery on how to efficiently implement them into a new style of learning, while others provide clear clues on how to make the process more efficient. Some easy wins for anyone who wants to learn how to code:
+
+Commit – A few minutes here and there isn’t going to work no matter how you’re learning. If you want to learn how to code, commit to it.
+Use a mentor – Find an experienced developer who is willing to sit with you for even 30 minutes per week. You should be conducting much more than 30 minutes per week of self-study, but the 30 minutes of pair programming with an expert can provide significant improvements in the learning process. (Contact me if you’re interested in being a mentor or being mentored.)
+Build your own projects – Constantly bouncing from tutorial to tutorial can be useful to learn concepts, but the quicker you begin building your own projects the better. Exclusively using tutorials to learn is like someone who wants to be a chef but only uses recipes. It may show you how to make that exact dish, but the knowledge of the underlying concepts is where the true learning will come.
+Review others’ code – If you use a tutorial to learn a concept, go to GitHub and find some places where people have used that concept in an actual project.
+If you’d like to learn more about the research and the programming academy that we’re building on top of it, check out MakersAcademy.com and/or email me at rob@makersacademy.com.
+
+Follow me on Twitter @startuprob
+
+I discuss this concept in my essay on Persistence. ↩
