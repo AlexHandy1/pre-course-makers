@@ -1,0 +1,312 @@
+# Logfile created on 2015-04-03 12:36:43 +0100 by logger.rb/44203
+I, [2015-04-03T12:36:43.572614 #7209]  INFO -- : FFFFFFFFFFFFFF
+
+Failures:
+
+  1) Unixoid test 1. should have a my/private/files directory
+     Failure/Error: expect(File.exist?('my/private/files')).to be true
+       
+       expected true
+            got false
+     # /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:6:in `block (2 levels) in <top (required)>'
+
+  2) Unixoid test 2. should have a my/public/files directory
+     Failure/Error: expect(File.exist?('my/public/files')).to be true
+       
+       expected true
+            got false
+     # /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:10:in `block (2 levels) in <top (required)>'
+
+  3) Unixoid test 3. should have a my/private/files/t-vars.env file
+     Failure/Error: expect(File.exist?('my/private/files/t-vars.env')).to be true
+       
+       expected true
+            got false
+     # /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:14:in `block (2 levels) in <top (required)>'
+
+  4) Unixoid test 4. should have 'List of env vars that begin with T' on first line of t-vars.env
+     Failure/Error: lines = File.readlines('my/private/files/t-vars.env')
+     Errno::ENOENT:
+       No such file or directory @ rb_sysopen - my/private/files/t-vars.env
+     # /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:18:in `readlines'
+     # /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:18:in `block (2 levels) in <top (required)>'
+
+  5) Unixoid test 5. should have the list of env vars that begin with T in t-vars.env
+     Failure/Error: lines = File.readlines('my/private/files/t-vars.env')
+     Errno::ENOENT:
+       No such file or directory @ rb_sysopen - my/private/files/t-vars.env
+     # /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:23:in `readlines'
+     # /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:23:in `block (2 levels) in <top (required)>'
+
+  6) Unixoid test 6. should have the TESTING_MAKERS env variable set up
+     Failure/Error: expect(ENV["TESTING_MAKERS"]).to eq('working')
+       
+       expected: "working"
+            got: nil
+       
+       (compared using ==)
+     # /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:30:in `block (2 levels) in <top (required)>'
+
+  7) Unixoid test 7. should have the TESTING_MAKERS env set to be created for new terminal windows
+     Failure/Error: expect(File.read("#{Dir.home}/.bash_profile")).to match(/export\s+TESTING_MAKERS=working/)
+       expected "\n[[ -s \"$HOME/.profile\" ]] && source \"$HOME/.profile\" # Load the default .profile\n\n[[ -s \"$HOME/.rvm/scripts/rvm\" ]] && source \"$HOME/.rvm/scripts/rvm\" # Load RVM into a shell session *as a function*\nexport SEASON=winter\nexport DAY=tuesday\n" to match /export\s+TESTING_MAKERS=working/
+       Diff:
+       @@ -1,2 +1,7 @@
+       -/export\s+TESTING_MAKERS=working/
+       +
+       +[[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
+       +
+       +[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+       +export SEASON=winter
+       +export DAY=tuesday
+     # /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:34:in `block (2 levels) in <top (required)>'
+
+  8) Unixoid test 8. should have t-vars.count in my/public/files with an overall count
+     Failure/Error: expect(File.exist?('my/public/files/t-vars.count')).to be true
+       
+       expected true
+            got false
+     # /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:38:in `block (2 levels) in <top (required)>'
+
+  9) Unixoid test 9. should have rw access for the owner only on my/private/files/t-vars.env
+     Failure/Error: permissions = File.stat(file).mode
+     Errno::ENOENT:
+       No such file or directory @ rb_file_s_stat - my/private/files/t-vars.env
+     # /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:44:in `stat'
+     # /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:44:in `block (2 levels) in <top (required)>'
+
+  10) Unixoid test 10. should only allow the owner to change into my/private/files
+     Failure/Error: permissions = File.stat(folder).mode
+     Errno::ENOENT:
+       No such file or directory @ rb_file_s_stat - my/private/files
+     # /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:50:in `stat'
+     # /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:50:in `block (2 levels) in <top (required)>'
+
+  11) Unixoid test 11. should have rw permissions for all users on my/public/files/t-vars.count
+     Failure/Error: t_vars_permissions = File.stat('my/public/files/t-vars.count').mode
+     Errno::ENOENT:
+       No such file or directory @ rb_file_s_stat - my/public/files/t-vars.count
+     # /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:57:in `stat'
+     # /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:57:in `block (2 levels) in <top (required)>'
+
+  12) Unixoid test 12. should have the count of text files in my/public/files/text-files-count.txt
+     Failure/Error: expect(File.read('my/public/files/text-files-count.txt')).to match(/^\s*\d{2,6}\s*$/)
+     Errno::ENOENT:
+       No such file or directory @ rb_sysopen - my/public/files/text-files-count.txt
+     # /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:62:in `read'
+     # /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:62:in `block (2 levels) in <top (required)>'
+
+  13) Unixoid test 13. should have the the first three env vars in my/private/files/first-three-env.txt
+     Failure/Error: lines = File.readlines('my/private/files/first-three-env.txt').map(&:chomp)
+     Errno::ENOENT:
+       No such file or directory @ rb_sysopen - my/private/files/first-three-env.txt
+     # /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:66:in `readlines'
+     # /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:66:in `block (2 levels) in <top (required)>'
+
+  14) Unixoid test 14. should have commands.txt in my/private/files
+     Failure/Error: expect(File.exist?('my/private/files/commands.txt')).to be true
+       
+       expected true
+            got false
+     # /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:73:in `block (2 levels) in <top (required)>'
+
+Finished in 0.01782 seconds (files took 0.12374 seconds to load)
+14 examples, 14 failures
+
+Failed examples:
+
+rspec /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:5 # Unixoid test 1. should have a my/private/files directory
+rspec /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:9 # Unixoid test 2. should have a my/public/files directory
+rspec /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:13 # Unixoid test 3. should have a my/private/files/t-vars.env file
+rspec /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:17 # Unixoid test 4. should have 'List of env vars that begin with T' on first line of t-vars.env
+rspec /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:22 # Unixoid test 5. should have the list of env vars that begin with T in t-vars.env
+rspec /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:29 # Unixoid test 6. should have the TESTING_MAKERS env variable set up
+rspec /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:33 # Unixoid test 7. should have the TESTING_MAKERS env set to be created for new terminal windows
+rspec /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:37 # Unixoid test 8. should have t-vars.count in my/public/files with an overall count
+rspec /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:42 # Unixoid test 9. should have rw access for the owner only on my/private/files/t-vars.env
+rspec /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:48 # Unixoid test 10. should only allow the owner to change into my/private/files
+rspec /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:56 # Unixoid test 11. should have rw permissions for all users on my/public/files/t-vars.count
+rspec /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:61 # Unixoid test 12. should have the count of text files in my/public/files/text-files-count.txt
+rspec /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:65 # Unixoid test 13. should have the the first three env vars in my/private/files/first-three-env.txt
+rspec /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:72 # Unixoid test 14. should have commands.txt in my/private/files
+
+
+I, [2015-04-03T14:12:57.614520 #7675]  INFO -- : .......F....F.
+
+Failures:
+
+  1) Unixoid test 8. should have t-vars.count in my/public/files with an overall count
+     Failure/Error: expect(File.read('my/public/files/t-vars.count')).to match(/^Overall count:\s+\d+\s*$/i)
+       expected "       6\n" to match /^Overall count:\s+\d+\s*$/i
+       Diff:
+       @@ -1,2 +1,2 @@
+       -/^Overall count:\s+\d+\s*$/i
+       +       6
+     # /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:39:in `block (2 levels) in <top (required)>'
+
+  2) Unixoid test 13. should have the the first three env vars in my/private/files/first-three-env.txt
+     Failure/Error: lines = File.readlines('my/private/files/first-three-env.txt').map(&:chomp)
+     Errno::ENOENT:
+       No such file or directory @ rb_sysopen - my/private/files/first-three-env.txt
+     # /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:66:in `readlines'
+     # /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:66:in `block (2 levels) in <top (required)>'
+
+Finished in 0.05494 seconds (files took 0.21921 seconds to load)
+14 examples, 2 failures
+
+Failed examples:
+
+rspec /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:37 # Unixoid test 8. should have t-vars.count in my/public/files with an overall count
+rspec /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:65 # Unixoid test 13. should have the the first three env vars in my/private/files/first-three-env.txt
+
+
+I, [2015-04-03T14:13:05.387140 #7675]  INFO -- : {
+  "message": "Validation Failed",
+  "errors": [
+    {
+      "resource": "Repository",
+      "code": "custom",
+      "field": "name",
+      "message": "name already exists on this account"
+    }
+  ],
+  "documentation_url": "https://developer.github.com/v3/repos/#create"
+}
+
+I, [2015-04-03T14:13:05.524715 #7675]  INFO -- : handy437@gmail.com
+
+I, [2015-04-03T14:13:05.531750 #7675]  INFO -- : Alex Handy
+
+I, [2015-04-03T14:13:05.572862 #7675]  INFO -- : Initialized empty Git repository in /Users/alexanderhandy/Desktop/temp/.git/
+
+I, [2015-04-03T14:13:05.604113 #7675]  INFO -- : 
+I, [2015-04-03T14:13:05.618500 #7675]  INFO -- : [master (root-commit) 4977d79] Unixoid submission
+ 1 file changed, 1 insertion(+)
+ create mode 100644 unixoid_results.txt
+
+I, [2015-04-03T14:13:05.627311 #7675]  INFO -- : 
+I, [2015-04-03T14:13:07.433328 #7675]  INFO -- : Branch master set up to track remote branch master from origin.
+
+I, [2015-04-03T14:13:07.442358 #7675]  INFO -- : 
+I, [2015-04-04T09:51:42.841763 #8040]  INFO -- : .......F..F.F.
+
+Failures:
+
+  1) Unixoid test 8. should have t-vars.count in my/public/files with an overall count
+     Failure/Error: expect(File.read('my/public/files/t-vars.count')).to match(/^Overall count:\s+\d+\s*$/i)
+       expected "       6\n" to match /^Overall count:\s+\d+\s*$/i
+       Diff:
+       @@ -1,2 +1,2 @@
+       -/^Overall count:\s+\d+\s*$/i
+       +       6
+     # /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:39:in `block (2 levels) in <top (required)>'
+
+  2) Unixoid test 11. should have rw permissions for all users on my/public/files/t-vars.count
+     Failure/Error: expect(t_vars_permissions & 0666).to eq(0666)
+       
+       expected: 438
+            got: 420
+       
+       (compared using ==)
+     # /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:58:in `block (2 levels) in <top (required)>'
+
+  3) Unixoid test 13. should have the the first three env vars in my/private/files/first-three-env.txt
+     Failure/Error: lines = File.readlines('my/private/files/first-three-env.txt').map(&:chomp)
+     Errno::ENOENT:
+       No such file or directory @ rb_sysopen - my/private/files/first-three-env.txt
+     # /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:66:in `readlines'
+     # /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:66:in `block (2 levels) in <top (required)>'
+
+Finished in 0.04093 seconds (files took 0.29503 seconds to load)
+14 examples, 3 failures
+
+Failed examples:
+
+rspec /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:37 # Unixoid test 8. should have t-vars.count in my/public/files with an overall count
+rspec /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:56 # Unixoid test 11. should have rw permissions for all users on my/public/files/t-vars.count
+rspec /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:65 # Unixoid test 13. should have the the first three env vars in my/private/files/first-three-env.txt
+
+
+I, [2015-04-04T09:51:48.343269 #8040]  INFO -- : {
+  "message": "Validation Failed",
+  "errors": [
+    {
+      "resource": "Repository",
+      "code": "custom",
+      "field": "name",
+      "message": "name already exists on this account"
+    }
+  ],
+  "documentation_url": "https://developer.github.com/v3/repos/#create"
+}
+
+I, [2015-04-04T09:51:48.373284 #8040]  INFO -- : handy437@gmail.com
+
+I, [2015-04-04T09:51:48.380343 #8040]  INFO -- : Alex Handy
+
+I, [2015-04-04T09:51:48.389190 #8040]  INFO -- : Reinitialized existing Git repository in /Users/alexanderhandy/OneDrive/pre-course/Wk1CommandLine/temp/.git/
+
+I, [2015-04-04T09:51:48.398937 #8040]  INFO -- : 
+I, [2015-04-04T09:51:48.429288 #8040]  INFO -- : [master 72fefbe] Unixoid submission
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+I, [2015-04-04T09:51:48.439923 #8040]  INFO -- : 
+I, [2015-04-04T09:51:50.349845 #8040]  INFO -- : Branch master set up to track remote branch master from origin.
+
+I, [2015-04-04T09:51:50.359131 #8040]  INFO -- : 
+I, [2015-04-04T09:52:59.253485 #8088]  INFO -- : .......F....F.
+
+Failures:
+
+  1) Unixoid test 8. should have t-vars.count in my/public/files with an overall count
+     Failure/Error: expect(File.read('my/public/files/t-vars.count')).to match(/^Overall count:\s+\d+\s*$/i)
+       expected "       6\n" to match /^Overall count:\s+\d+\s*$/i
+       Diff:
+       @@ -1,2 +1,2 @@
+       -/^Overall count:\s+\d+\s*$/i
+       +       6
+     # /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:39:in `block (2 levels) in <top (required)>'
+
+  2) Unixoid test 13. should have the the first three env vars in my/private/files/first-three-env.txt
+     Failure/Error: lines = File.readlines('my/private/files/first-three-env.txt').map(&:chomp)
+     Errno::ENOENT:
+       No such file or directory @ rb_sysopen - my/private/files/first-three-env.txt
+     # /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:66:in `readlines'
+     # /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:66:in `block (2 levels) in <top (required)>'
+
+Finished in 0.04124 seconds (files took 0.25629 seconds to load)
+14 examples, 2 failures
+
+Failed examples:
+
+rspec /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:37 # Unixoid test 8. should have t-vars.count in my/public/files with an overall count
+rspec /Users/alexanderhandy/.rvm/gems/ruby-2.1.5/gems/unixoid-challenge-0.1.3/challenge_spec.rb:65 # Unixoid test 13. should have the the first three env vars in my/private/files/first-three-env.txt
+
+
+I, [2015-04-04T09:53:04.395349 #8088]  INFO -- : {
+  "message": "Validation Failed",
+  "errors": [
+    {
+      "resource": "Repository",
+      "code": "custom",
+      "field": "name",
+      "message": "name already exists on this account"
+    }
+  ],
+  "documentation_url": "https://developer.github.com/v3/repos/#create"
+}
+
+I, [2015-04-04T09:53:04.487740 #8088]  INFO -- : handy437@gmail.com
+
+I, [2015-04-04T09:53:04.494968 #8088]  INFO -- : Alex Handy
+
+I, [2015-04-04T09:53:04.506625 #8088]  INFO -- : Reinitialized existing Git repository in /Users/alexanderhandy/OneDrive/pre-course/Wk1CommandLine/temp/.git/
+
+I, [2015-04-04T09:53:04.549478 #8088]  INFO -- : 
+I, [2015-04-04T09:53:04.563204 #8088]  INFO -- : [master 30cf200] Unixoid submission
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+I, [2015-04-04T09:53:04.572986 #8088]  INFO -- : 
+I, [2015-04-04T09:53:06.392554 #8088]  INFO -- : Branch master set up to track remote branch master from origin.
+
+I, [2015-04-04T09:53:06.415825 #8088]  INFO -- : 

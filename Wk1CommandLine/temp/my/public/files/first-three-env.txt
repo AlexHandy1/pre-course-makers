@@ -1,0 +1,3 @@
+Apple_PubSub_Socket_Render=/private/tmp/com.apple.launchd.7X4g3xwpNp/Render
+DAY2=Friday
+DAY=tuesday
