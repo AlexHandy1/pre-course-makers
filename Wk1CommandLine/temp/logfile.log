@@ -391,3 +391,43 @@ I, [2015-04-04T16:17:19.914492 #9309]  INFO -- :
 I, [2015-04-04T16:17:21.800545 #9309]  INFO -- : Branch master set up to track remote branch master from origin.
 
 I, [2015-04-04T16:17:21.810766 #9309]  INFO -- : 
+I, [2015-04-05T14:17:52.032335 #10471]  INFO -- : ..............
+
+Finished in 0.10862 seconds (files took 0.21955 seconds to load)
+14 examples, 0 failures
+
+
+I, [2015-04-05T14:17:58.273435 #10471]  INFO -- : {
+  "message": "Validation Failed",
+  "errors": [
+    {
+      "resource": "Repository",
+      "code": "custom",
+      "field": "name",
+      "message": "name already exists on this account"
+    }
+  ],
+  "documentation_url": "https://developer.github.com/v3/repos/#create"
+}
+
+I, [2015-04-05T14:17:58.366502 #10471]  INFO -- : handy437@gmail.com
+
+I, [2015-04-05T14:17:58.374560 #10471]  INFO -- : Alex Handy
+
+I, [2015-04-05T14:17:58.419521 #10471]  INFO -- : Reinitialized existing Git repository in /Users/alexanderhandy/OneDrive/pre-course/Wk1CommandLine/temp/.git/
+
+I, [2015-04-05T14:17:58.460538 #10471]  INFO -- : 
+E, [2015-04-05T14:17:58.471749 #10471] ERROR -- : Command 'git commit -m 'Unixoid submission' 2>/dev/null' returned 1. Expected 0
+Here is the command output:
+
+On branch master
+Untracked files:
+	logfile.log
+	my/
+
+nothing added to commit but untracked files present
+
+I, [2015-04-05T14:17:58.481064 #10471]  INFO -- : 
+I, [2015-04-05T14:17:59.709256 #10471]  INFO -- : Branch master set up to track remote branch master from origin.
+
+I, [2015-04-05T14:17:59.718341 #10471]  INFO -- : 
