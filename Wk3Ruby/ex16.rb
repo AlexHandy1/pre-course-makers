@@ -12,7 +12,7 @@ puts "Now we are going to put in some new text"
 line1 = $stdin.gets.chomp
 line2 = $stdin.gets.chomp
 
-target.write(line1 + line2)
+target.write(line1 + "\n" + line2)
 
 puts "You have added '#{line1}' and '#{line2}' to #{filename}"
 
@@ -23,3 +23,4 @@ puts "What file do you now want to read?"
 read_file = open($stdin.gets.chomp)
 
 puts read_file.read
+read_file.close()
