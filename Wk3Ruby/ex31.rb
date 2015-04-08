@@ -1,6 +1,6 @@
 #features 
 	# - one block if statement, one block when statement
-	# - functions - ideally have one passing into another
+	# - functions - consider adding having one passing into another if helpful
 	# - include file manipulation
 	# - include a module (call Ex26 and do something to a sentence that add to a file)
 
@@ -14,6 +14,8 @@
 		# - One will write and add contents to the file
 		# - One will empty the file
 		# - One will do something new that search for
+
+require './ex26.rb'
 
 puts "Welcome, you have entered the game room"
 puts "You get a choice of one of two games - Game 1: Tennis Stat Attack or Game 2: File Slot Machine"
@@ -46,7 +48,52 @@ def tennis_stat_attack(player, career_start)
 end
 
 def file_slot_machine
-	puts "Run game 2"
+	puts "Please put in the name of the file you want to do something to"
+	puts ">"
+	filename = $stdin.gets.chomp
+
+	#consider adding validation to check if file exists
+	puts "What do you want to do to the file? Please choose from READ, WRITE, EMPTY and RANDOM?"
+	puts ">"
+	file_action = $stdin.gets.chomp
+
+	case file_action
+
+		when "READ"
+			puts "Reading #{filename}..."
+			read_file = open(filename)
+			puts read_file.read
+			read_file.close
+		when "WRITE"
+			puts "Add a line to #{filename}"
+			puts ">"
+			new_line = $stdin.gets.chomp
+
+			write_file = open(filename, 'r+')
+			write_file.write(new_line)
+			write_file.close
+			puts "reenter filename to read"
+			puts ">>"
+			file_to_read = $stdin.gets.chomp # must be a more efficient way to do this google this
+			open_file = open(file_to_read)
+			puts open_file.read
+			open_file.close
+
+		when "EMPTY"
+			puts "Emptying #{filename}..."
+
+			empty_file = open(filename, 'r+')
+			empty_file.truncate(0)
+			puts empty_file.read
+			empty_file.close
+
+		when "RANDOM"
+			puts "Doing something fun and new to the file..."
+			# add a referenece to Ex26 to do something with a sentence that add
+			# find something else interesting
+		else  
+			puts "That is not an option so nothing will happen"
+		end
 end
 
 while (game_validation == false)

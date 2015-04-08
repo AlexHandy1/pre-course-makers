@@ -1,2 +1,1 @@
-Here is line 1
-Here is line 2
+Here is some more text
