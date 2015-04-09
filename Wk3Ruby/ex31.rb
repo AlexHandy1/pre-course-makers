@@ -52,48 +52,55 @@ def file_slot_machine
 	puts ">"
 	filename = $stdin.gets.chomp
 
-	#consider adding validation to check if file exists
-	puts "What do you want to do to the file? Please choose from READ, WRITE, EMPTY and RANDOM?"
-	puts ">"
-	file_action = $stdin.gets.chomp
+	if File.exist?(filename) == true # method to validate whether file actually exists
+		puts "What do you want to do to the file? Please choose from READ, WRITE, EMPTY and RANDOM?"
+		puts ">"
+		file_action = $stdin.gets.chomp
 
-	case file_action
+		case file_action
 
-		when "READ"
-			puts "Reading #{filename}..."
-			read_file = open(filename)
-			puts read_file.read
-			read_file.close
-		when "WRITE"
-			puts "Add a line to #{filename}"
-			puts ">"
-			new_line = $stdin.gets.chomp
+			when "READ"
+				puts "Reading #{filename}..."
+				read_file = open(filename)
+				puts read_file.read
+				read_file.close
+			when "WRITE"
+				puts "Add a line to #{filename}"
+				puts ">"
+				new_line = $stdin.gets.chomp
 
-			write_file = open(filename, 'r+')
-			write_file.write(new_line)
-			write_file.close
-			puts "reenter filename to read"
-			puts ">>"
-			file_to_read = $stdin.gets.chomp # must be a more efficient way to do this google this
-			open_file = open(file_to_read)
-			puts open_file.read
-			open_file.close
+				write_file = open(filename, 'r+')
+				write_file.write(new_line)
+				write_file.close
+				puts "reenter filename to read"
+				puts ">>"
+				file_to_read = $stdin.gets.chomp # must be a more efficient way to do this google this
+				open_file = open(file_to_read)
+				puts open_file.read
+				open_file.close
 
-		when "EMPTY"
-			puts "Emptying #{filename}..."
+			when "EMPTY"
+				puts "Emptying #{filename}..."
 
-			empty_file = open(filename, 'r+')
-			empty_file.truncate(0)
-			puts empty_file.read
-			empty_file.close
+				empty_file = open(filename, 'r+')
+				empty_file.truncate(0)
+				puts empty_file.read
+				empty_file.close
 
-		when "RANDOM"
-			puts "Doing something fun and new to the file..."
-			# add a referenece to Ex26 to do something with a sentence that add
-			# find something else interesting
-		else  
-			puts "That is not an option so nothing will happen"
-		end
+			when "RANDOM"
+				puts "Doing something fun and new to #{filename}..."
+				sentence = IO.readlines(filename)
+				puts sentence[2]
+				# words = Ex26.break_words(sentence) the .split method didn't to work here - consider coming back too
+				# puts words[3]
+				sorted_sentences = Ex26.sort_words(sentence)
+				puts sorted_sentences
+			else  
+				puts "That is not an option so nothing will happen"
+			end
+	else
+		puts "Sorry, file doesn't exist, run the game again and pick one that does"
+	end
 end
 
 while (game_validation == false)

@@ -920,3 +920,5 @@
 		# - Are you able to commit as a marker without changing anything?
 		# - When you checkout and move around tags and says 'Head detached' what are implications of this? (lose gs tracking of how far it is ahead from origin and haven't seemed to get that example working properly)
 		# - Why won't it let you push a specific branch ahead of master? What happens if you set upstream remote? (Git push origin branch worked)
+	# File movement
+		# - what is a more efficient way to write to a file and then read it straight away? Currently having to close (to save) and then ask for file again to be reopened under a new variable
