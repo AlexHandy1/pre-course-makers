@@ -8,11 +8,11 @@
     # Cross this task off your list, then pick your next easiest task and repeat.
 
 #FEATURES
-	# - include manipulating an array and find some new methods
+	# - include manipulating an array and find some new methods - only if useful
 	# - include manipulating a hash (creating symbols) and find some new methods can use with it
-	# - use a class to create an object (e.g. OrangeTree) that can be accessed across the game and use inheritance
-	# - use some stock ruby modules (e.g. Math::PI) and get used to integrating into programmes
-	# - include using a block, a proc, a yield and a lambda
+	# - use a class to create an object (e.g. OrangeTree) that can be accessed across the game and use inheritance (add new class)
+	# - use some stock ruby modules (e.g. Math::PI) and get used to integrating into programmes (do something for tournament win)
+	# - include using a block, a proc, a yield and a lambda (try for one of the other methods - again maybe tournamet win)
 
 ### FLOW >> SMASH_TENNIS_DEMO ###
 	# Initialize/ create player class
@@ -128,17 +128,21 @@ class Player
 	end
 
 	def level1_gym 
-
+		puts "Go to the gym..."
+		@strength += 2
 
 	end
 
 	def level1_track 
-
+		puts "Go to the track..."
+		@speed += 2
 
 	end
 
 	def level1_court 
-
+		puts "Go to the court..."
+		@skill += 2
+		@confidence += 2
 
 	end
 
@@ -155,6 +159,67 @@ class Player
 
 	def level1_pre_training
 			puts "Welcome to Level 1..."
+
+			puts "You get three goes to train your player for the next level"
+			puts "You can train your player in the gym, track or court by entering 'Gym', 'Track' or 'Court'"
+			
+			#NON INTERACTIVE VERSION#
+			prompt = "Hit Enter >>"
+
+			puts "First, your player needs to go the gym"
+			puts prompt
+			$stdin.gets.chomp
+			level1_gym
+			puts "Awesome, now your player has #{@strength} for strength, #{@speed} for speed, #{@skill} for skill and #{@confidence} for confidence"
+
+			puts "Now, your player needs some time on the track"
+			puts prompt
+			$stdin.gets.chomp
+			level1_track
+			puts "Awesome, now your player has #{@strength} for strength, #{@speed} for speed, #{@skill} for skill and #{@confidence} for confidence"
+
+			puts "Lastly, your player needs to get some practice on court"
+			puts prompt
+			$stdin.gets.chomp
+			level1_court
+			puts "Awesome, now your player has #{@strength} for strength, #{@speed} for speed, #{@skill} for skill and #{@confidence} for confidence"
+
+
+			#INTERACTIVE VERSION - WIP#
+
+			#issue about how get back into the while loop from function that call - get stuck in current structure, how approach?
+				# goes = 0
+				# goodAnswer = false
+				# level1_choice = nil
+
+				# while goes <= 3 && goodAnswer == false
+				# 	puts "Please enter Gym, Track or Court"
+				# 	puts ">>"
+				# 	level1_choice = $stdin.gets.chomp
+
+				# 	if level1_choice == "Gym"
+				# 		goes += 1
+				# 		level1_gym
+				# 		goodAnswer = true
+				# 	elsif level1_choice == "Track"
+				# 		goes += 1
+				# 		level1_track
+				# 		goodAnswer = true
+				# 	elsif level1_choice == "Court"
+				# 		goes += 1
+				# 		level1_court
+				# 		goodAnswer = true
+				# 	else
+				# 		puts "Please enter Gym, Track or Court"
+				# 		puts ">>"
+				# 		level1_choice = $stdin.gets.chomp
+				# 	end
+				# end
+						
+				if @skill >= 6 #add parameters to push up to the next level
+						puts "Well done, you can progress to the next level"
+						level2_practice_session
+				end
 
 	end
 
