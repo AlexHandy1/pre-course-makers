@@ -14,6 +14,11 @@
 	# - use some stock ruby modules (e.g. Math::PI) and get used to integrating into programmes (do something for tournament win)
 	# - include using a block, a proc, a yield and a lambda (try for one of the other methods - again maybe tournamet win)
 
+#KEY OPEN QU's
+	# - How and when do you set-up an object (or hash) within which you can access variables (or symbols) that can call outside of class (e.g. player issue)
+	# - How do you build variables within classes that can be accessed/ compared directly within an inherited class (e.g. Opponent vs Player)
+	# - What does super do?
+
 ### FLOW >> SMASH_TENNIS_DEMO ###
 	# Initialize/ create player class
 		#experiment with where you need to initialize player objective with 4 attributes (strength, speed, skill, confidence)
@@ -48,8 +53,9 @@
 			#[Advanced option] > can I make this more interactive e.g. add things that do here. Can you keep adding and accumulating e.g. while @under x then keep adding
 		#sets parameters for when move to next level e.g. all on confidence - when confidence greater than 7 go to next level
 			#if statement so that when hit a certain point calls function to launch next level
-	# Tournmaent
+	# Tournament
 		#launch enter tournament function
+	# ADDED opponent class - work towards building it so that can have the 2 interact and play one another by just calling classes
 
 ### MAIN PROGRAMME ###
 
@@ -73,8 +79,12 @@ class Player
 
 			puts "Your player #{@user_name} has been created and he has #{@strength} for strength, #{@speed} for speed, #{@skill} for skill and #{@confidence} for confidence"
 			start_console
-		
 	end
+
+			attr_accessor :strength #lets me access individual variable through an instance
+			attr_accessor :speed
+			attr_accessor :skill
+			attr_accessor :confidence
 
 	def start_console
 			puts "Now your player has been created, you have some options"
@@ -120,8 +130,16 @@ class Player
 			when :level1
 				level1_pre_training
 			when :level2
+				@strength += 2
+				@speed += 2
+				@skill += 2
+				@confidence +=2
 				level2_practice_session
 			when :level3
+				@strength += 5
+				@speed += 5
+				@skill += 5
+				@confidence += 5
 				level3_enter_tournament
 			end
 
@@ -130,31 +148,30 @@ class Player
 	def level1_gym 
 		puts "Go to the gym..."
 		@strength += 2
-
 	end
 
 	def level1_track 
 		puts "Go to the track..."
 		@speed += 2
-
 	end
 
 	def level1_court 
 		puts "Go to the court..."
 		@skill += 2
 		@confidence += 2
-
 	end
 
 	def level2_hit 
-
-
+			puts "Go have an intense hit on court"
+			@strength += 3
+			@speed += 3
 	end
 
 
 	def level2_practice_match 
-
-
+			puts "Go have a full practice match - you're almost ready!"
+			@skill += 3
+			@confidence += 3
 	end
 
 	def level1_pre_training
@@ -225,15 +242,117 @@ class Player
 
 	def level2_practice_session
 			puts "Welcome to Level 2..."
+			puts "So your player now has #{@strength} for strength, #{@speed} for speed, #{@skill} for skill and #{@confidence} for confidence"
+			puts "They still need to improve to enter a tournment though so lets get going"
 
+			#NON INTERACTIVE VERSION#
+			prompt = "Hit Enter >>"
+
+			puts "Now, your player needs to go for an intense hit"
+			puts prompt
+			$stdin.gets.chomp
+			level2_hit
+			puts "Awesome, now your player has #{@strength} for strength, #{@speed} for speed, #{@skill} for skill and #{@confidence} for confidence"
+
+			puts "Ok, before the tournament your player needs to have a full practice match"
+			puts prompt
+			$stdin.gets.chomp
+			level2_practice_match
+			puts "Awesome, now your player has #{@strength} for strength, #{@speed} for speed, #{@skill} for skill and #{@confidence} for confidence"
+
+
+				if @skill >= 9 #add parameters to push up to the next level
+							puts "Well done, you can progress to the next level"
+							level3_enter_tournament
+				end
 	end
 
 	def level3_enter_tournament
 			puts "Welcome to Level 3..."
+			puts "So your player now has #{@strength} for strength, #{@speed} for speed, #{@skill} for skill and #{@confidence} for confidence"
+			puts "You are now ready to enter your first tournament!"
+			puts "Do you want to enter the tournament?" #advanced feature would be to allow people to go back up and down levels? Add variable in parameters called acceptance that set true or false?
+
+			entry = $stdin.gets.chomp
+
+			if entry == "YES"
+					puts "OK good luck..."
+				if @confidence > 5 #PLACEHOLDER - update to >> certain attributes greater than opponent object that set-up then win else lose
+						puts "Congratulations, you win the first match in your tournament!"
+						puts "If you want to keep playing SMASH TENNIS, go to buysmashtennis.com!"
+				else 
+						puts "Ah back luck, you needed more confidence"
+						puts "If you want to keep playing SMASH TENNIS, go to buysmashtennis.com!"
+				end
+			else 
+				puts "Ok thanks for playing the SMASH TENNIS DEMO!"
+			end
+
+			# $player = TPlayer.new(
+			# 						:strength => @strength,
+			# 						:speed => @speed,
+			# 						:skill => @skill,
+			# 						:confidence => @confidence
+			# 					)
+			# puts $player
+			# return $player
 	end
 
 end
 
-Player.new
+class Opponent < Player
+	# attr_accessor :name #option to add in name acceptance if get basics working
+	def initialize
+			@opp_strength = 2
+			@opp_speed = 2
+			@opp_skill = 4
+			@opp_confidence = 1
+	end
+			attr_accessor :opp_strength #lets me access individual variable through an instance
+			attr_accessor :opp_speed
+			attr_accessor :opp_skill
+			attr_accessor :opp_confidence
+
+	def test_gym 
+		puts "Go to the gym..."
+		@opp_strength += 2
+	end
+
+	def test_track 
+		puts "Go to the track..."
+		@opp_speed += 2
+	end
+
+	def name_check
+		puts "Here is your opponent"
+		puts "Your opponent has has #{@opp_strength} for strength, #{@opp_speed} for speed, #{@opp_skill} for skill and #{@opp_confidence} for confidence"
+	end
+
+	def initiate_tournament #how do you access and compare a variable from one class in another class (e.g. Player attributes vs Opponent attributes)?
+		puts "You are going to play the first player"
+
+		# if user_player.strength > opponent.opp_strength
+		# 	puts "You win!"
+		# else
+		# 	puts "Sorry, you lose"
+		# end
+	end
+end 
+
+
+user_player = Player.new
+opponent = Opponent.new
+opponent.name_check
+opponent.test_gym
+opponent.test_track
+opponent.name_check
+puts opponent.opp_strength
+puts user_player.strength
+
+if user_player.strength > opponent.opp_strength # works outside of the class instances - need to understand why
+			puts "You win!"
+else
+			puts "Sorry, you lose"
+end
 
 
