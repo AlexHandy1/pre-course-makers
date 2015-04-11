@@ -328,8 +328,16 @@ class Opponent < Player
 		puts "Your opponent has has #{@opp_strength} for strength, #{@opp_speed} for speed, #{@opp_skill} for skill and #{@opp_confidence} for confidence"
 	end
 
-	def initiate_tournament #how do you access and compare a variable from one class in another class (e.g. Player attributes vs Opponent attributes)?
+	$tester = Proc.new do |ignore|
+			puts "Here is where could put a proc solution"
+	end
+
+	def initiate_tournament(tester) #how do you access and compare a variable from one class in another class (e.g. Player attributes vs Opponent attributes)?
+		#adding a closure through proc or lambdas could be one solution
 		puts "You are going to play the first player"
+
+		tester.call
+		#practice a proc, lambda and/ or bloc here
 
 		# if user_player.strength > opponent.opp_strength
 		# 	puts "You win!"
@@ -354,5 +362,7 @@ if user_player.strength > opponent.opp_strength # works outside of the class ins
 else
 			puts "Sorry, you lose"
 end
+
+opponent.initiate_tournament($tester)
 
 

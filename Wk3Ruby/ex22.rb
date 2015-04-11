@@ -691,6 +691,12 @@
 # BLOCS, PROCS, LAMBDAS (Friday)
 	# In particular, you can't pass methods into other methods (but you can pass procs into methods), and methods can't return other methods 
 		# (but they can return procs). This is simply because procs are objects; methods aren't.
+		# Procs are objects, blocs are not - means you can assign variables, methods etc to procs in addition to passing into methods.
+		# You can assign multiple procs to method parameters because they mean something on their own, blocs cannot
+		# Lambdas count the number of arguments passed in whereas procs won't throw an error and will just return nil
+		# Lambas‘return’ triggers the code right outside of the lambda code (defers to last thing method returns - see example) 
+			# whereas with procs only trigger code where being executed as part of their return function within a method - keeps control
+
 	# blocs
 		bloc = ['I', 'am', 'just', 'a', 'bit', 'of', 'code']
 
@@ -920,5 +926,12 @@
 		# - Are you able to commit as a marker without changing anything?
 		# - When you checkout and move around tags and says 'Head detached' what are implications of this? (lose gs tracking of how far it is ahead from origin and haven't seemed to get that example working properly)
 		# - Why won't it let you push a specific branch ahead of master? What happens if you set upstream remote? (Git push origin branch worked)
+		# - My lower level directory has a different remote - is that OK? 
+		# - Your branch is based on 'origin/master', but the upstream is gone - what does that mean?
+		# - Still not 100% clear on ways you can use upstream and where exactly gets pushed too e.g. difference between pushing to local origin/ fork vs the original remote upstream
+		# - As a repository manager, how do you manage pull requests?
+		# - why when I added cat to my Octocat does it not show up as a file - is it because repository is sitting elsewhere on my Github?
 	# File movement
 		# - what is a more efficient way to write to a file and then read it straight away? Currently having to close (to save) and then ask for file again to be reopened under a new variable
+	# What is an enumerator?
+	# Array issue with permutation method
