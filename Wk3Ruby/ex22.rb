@@ -908,7 +908,7 @@
 		# - if you do a hard reset, can you also cycle back forward in time? To what degree are all changes kept?
 		# - why does it say that my private files for first challenge are not being tracked and even when I add it doesn't pick it up?
 		# - what would you use a git server for? How is it linked to internet?
-		# - why on GitHub when copy something over recursively (cp -r) can't access underlying files e.g. command-line exercises
+		# - SUBMODULES? why on GitHub when copy something over recursively (cp -r) can't access underlying files e.g. command-line exercises
 			# - tried to reset but then wouldn't let me push and merge it and I had to pull back the incorrect file lay-out and reincluded commit history
 		# - how exactly does rebasing work? Do you need to fetch upstream before submit pull request? When I pushed to origin master off my branch, where did it go?	
 			# - when I try and compare my changes on fork online nothing shows up in comparison?
