@@ -43,3 +43,35 @@ end
 
 puts "-" * 10
 
+puts "-" * 10
+puts "Practice methods"
+
+puts regions.keys #prints all the keys
+puts regions.key(:NorthWest) #finds and prints the corresponding value
+puts regions.has_key?(:NW) #returns true or false based on whether the key is found
+switch_regions = regions.invert #switches the key, value pairs but would need to store in a variable to keep
+puts switch_regions
+
+counties_array = counties.to_a
+puts counties_array
+counties_new = counties_array.to_h
+puts counties_new
+
+one_city = cities.select {|k,v| k == :Lancashire }
+puts one_city
+
+cities.merge!(city_acronyms) #merges two hashes together, if any duplicates for keys then they are overwritten from the new hash (e.g. the one in brackets)
+puts cities
+city_acronyms.store(:Liverpool, :LPL) #another way of adding to a hash
+puts city_acronyms
+
+
+
+
+
+
+
+
+
+
+
