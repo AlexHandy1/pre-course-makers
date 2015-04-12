@@ -850,9 +850,11 @@
 		# - when and why do you use these?
 	# classes
 		# - why do you need to initialize? How does this link into setting up of variables etc? Interesting that you have to initialize class @@variables but instance @variables get ignored?
+			# You can initialize method so that when a new class is instantiated (Person.new) it automatically calls the instantiate method to establish object
 		# - why would you use a normal variable (not global, local, instance or class)? How differs?
 		# - how can you call on instance variables within multiple different methods? How define instance?
 		# - do not fully understand use of .self in class definition?
+			# Self is a way to explicitly refer to the current object and make sure that the object receiving it is the current object - mainly uses in disambiguating between instance variables, class methods and variables
 		# - may be some confusion around exactly what the parameters of an instance are? (see classrevision)
 		# - need to see an example of when would just want to use something in one instance
 		# - need to see more examples of attr_reader, attr_writer and attr_accessor - not clear yet why exactly use?
