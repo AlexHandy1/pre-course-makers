@@ -931,6 +931,12 @@
 		# - Still not 100% clear on ways you can use upstream and where exactly gets pushed too e.g. difference between pushing to local origin/ fork vs the original remote upstream
 		# - As a repository manager, how do you manage pull requests?
 		# - why when I added cat to my Octocat does it not show up as a file - is it because repository is sitting elsewhere on my Github?
+			# - again when tried to do this for Ruby-Kickstart (e.g. forked, cloned into Wk3Ruby part of pre-course existing repo, set up new remotes origin, upstream, precourse. Pushes to origin, doesn't push to precourse )
+			hint: Updates were rejected because the remote contains work that you do
+			hint: not have locally. This is usually caused by another repository pushing
+			hint: to the same ref. You may want to first integrate the remote changes
+			hint: (e.g., 'git pull ...') before pushing again.
+			hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 	# File movement
 		# - what is a more efficient way to write to a file and then read it straight away? Currently having to close (to save) and then ask for file again to be reopened under a new variable
 	# What is an enumerator?
