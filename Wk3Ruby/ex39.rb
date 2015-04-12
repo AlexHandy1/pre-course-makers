@@ -65,7 +65,17 @@ puts cities
 city_acronyms.store(:Liverpool, :LPL) #another way of adding to a hash
 puts city_acronyms
 
+### SORTING EXAMPLE ###
 
+#hash within a hash
+teams = {
+	:Man_U => {:team => "Man United", :wins => 20},
+	:Man_C => {:team => "Man City", :wins => 28},
+	:West_Brom => {:team => "West Brom", :wins => 15}
+}
+
+puts teams.sort_by {|k, v| v[:wins]} #sorts by smallest number first
+puts teams.sort_by {|k, v| v[:team]} #sorts in alphabetical order
 
 
 

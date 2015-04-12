@@ -868,6 +868,8 @@
 		# - what are the rules behind file directories for calling modules e.g. if I am not in the program file?
 		# - do you have to capialise and abstract the module methods to get to work e.g. MyStuff.test method
 		# - look into this - the extend keyword mixes a module's methods at the class level. This means that class itself can use the methods, as opposed to instances of the class.
+	# what is the Enumerable?
+	# Array issue with permutation method
 	# procs 
 		# - need to better understand and have example of when a method expects a block use the &symbol to convert to proc and also convert symbols to blocks (below)
 	# gems
@@ -931,13 +933,12 @@
 		# - Still not 100% clear on ways you can use upstream and where exactly gets pushed too e.g. difference between pushing to local origin/ fork vs the original remote upstream
 		# - As a repository manager, how do you manage pull requests?
 		# - why when I added cat to my Octocat does it not show up as a file - is it because repository is sitting elsewhere on my Github?
-			# - again when tried to do this for Ruby-Kickstart (e.g. forked, cloned into Wk3Ruby part of pre-course existing repo, set up new remotes origin, upstream, precourse. Pushes to origin, doesn't push to precourse )
-			hint: Updates were rejected because the remote contains work that you do
-			hint: not have locally. This is usually caused by another repository pushing
-			hint: to the same ref. You may want to first integrate the remote changes
-			hint: (e.g., 'git pull ...') before pushing again.
-			hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+			# - again when tried to do this for Ruby-Kickstart (e.g. forked, cloned into Wk3Ruby part of pre-course existing repo, set up new remotes origin, upstream, precourse. Pushes to origin, doesn't push to precourse properly from online)
+			# - solution is - I have to push from Ruby-Kickstart folder into repo
+			# hint: Updates were rejected because the remote contains work that you do
+			# hint: not have locally. This is usually caused by another repository pushing
+			# hint: to the same ref. You may want to first integrate the remote changes
+			# hint: (e.g., 'git pull ...') before pushing again.
+			# hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 	# File movement
 		# - what is a more efficient way to write to a file and then read it straight away? Currently having to close (to save) and then ask for file again to be reopened under a new variable
-	# What is an enumerator?
-	# Array issue with permutation method
