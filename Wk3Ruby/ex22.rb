@@ -860,8 +860,6 @@
 		# - need to see more examples of attr_reader, attr_writer and attr_accessor - not clear yet why exactly use?
 	# still need to see a working example of how not using private or public could impact
 	# are methods and functions different? E.g. is it that you can define own functions but methods are like .push on arrays?
-	# what is happening in arrays2test.rb?
-	# what is happening in oop_test.rb?
 	# arrays
 		# - what is the most effective way to take an input as an array?
 		# - does .select not work because it is a set of integers?
@@ -871,7 +869,9 @@
 		# - do you have to capialise and abstract the module methods to get to work e.g. MyStuff.test method
 		# - look into this - the extend keyword mixes a module's methods at the class level. This means that class itself can use the methods, as opposed to instances of the class.
 	# what is the Enumerable?
-	# Array issue with permutation method
+	# Array issue with permutation method?
+	# What is the best way to iterate over a variable and store output in a new array variable?
+	# Check questions on string methods - make sure understand the index variable issue
 	# procs 
 		# - need to better understand and have example of when a method expects a block use the &symbol to convert to proc and also convert symbols to blocks (below)
 	# gems
