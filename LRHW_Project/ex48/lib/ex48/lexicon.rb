@@ -38,7 +38,7 @@ class Lexicon
 
 	def scan(user_input)
 		#convert_number(user_input)
-		array = user_input.split(' ')
+		array = user_input.downcase.split(' ')
 		directions = []
 		verbs = []
 		stop_words = []
@@ -50,7 +50,7 @@ class Lexicon
 		array.each do |x|
 			if x == "north" || x == "south" || x == "east" || x == "west" || x == "down" || x == "up" || x == "left" || x == "right" || x == "back" 
 				directions << x.prepend('direction ').split(' ')
-			elsif x == "go" || x == "stop" || x == "kill" || x == "eat"
+			elsif x == "go" || x == "stop" || x == "kill" || x == "eat" || x == "run"
 				verbs << x.prepend('verb ').split(' ')
 			elsif x == "the" || x == "in" || x == "of" || x == "from" || x == "at" || x == "it"
 				stop_words << x.prepend('stop ').split(' ')
@@ -62,6 +62,8 @@ class Lexicon
 				error << x.prepend('error ').split(' ')
 			end
 		end
+
+		all_input = [directions, verbs, stop_words, nouns, numbers, error]
 			# directions << x.prepend('direction ').split(' ') if x == "north" || x == "south" || x == "east" || x == "west" || x == "down" || x == "up" || x == "left" || x == "right" || x == "back" 
 			# verbs << x.prepend('verb ').split(' ') if x == "go" || x == "stop" || x == "kill" || x == "eat"
 			# stop_words << x.prepend('stop ').split(' ') if x == "the" || x == "in" || x == "of" || x == "from" || x == "at" || x == "it"
@@ -80,6 +82,8 @@ class Lexicon
 		p nouns
 		p numbers
 		p error
+		p all_input
+		return all_input
 	end
 
 end
