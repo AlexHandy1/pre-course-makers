@@ -16,7 +16,7 @@ def method_1(array)
 	puts new_hash.invert
 end
 
-#method_1(["This", "is", "an", "example", "array", "to a hash"])
+method_1(["This", "is", "an", "example", "array", "to a hash"])
 
 #You manually create a new hash and then sort this hash by its values and create an array from it
 
@@ -165,10 +165,10 @@ def method11(arrays)
 
 end
 
-multiple_arrays = method10([2,3,3,2,4,5,6,7,10,15,17,21])
-p multiple_arrays
+# multiple_arrays = method10([2,3,3,2,4,5,6,7,10,15,17,21])
+# p multiple_arrays
 
-method11(multiple_arrays)
+# #method11(multiple_arrays)
 
 
 
